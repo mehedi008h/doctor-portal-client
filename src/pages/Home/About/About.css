@@ -1,0 +1,15 @@
+.about {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30px;
+}
+.about-item {
+    background-color: #262827;
+    border-radius: 10px;
+    color: white;
+}
+.about-item:hover {
+    background-color: #677C72;
+}
+.icon {
+    font-size: 50px;
+}

@@ -8,8 +8,10 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
 import './Header.css';
+import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
+    const { user, logOut } = useAuth();
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -27,8 +29,19 @@ const Header = () => {
                         Doctor Portal
                     </Typography>
                     <NavLink to="/home" className="link">Home</NavLink>
-                    <NavLink to="/login" className="link">Login</NavLink>
-                    <Button color="inherit">Logout</Button>
+                    {user?.email &&
+                        <Box>
+                            <NavLink to="/appointment" className="link">Appointment</NavLink>
+                            <img className="user-img me-2" src={user?.photoURL} alt="" />
+                            <NavLink to="/login" className="link">{user?.displayName}</NavLink>
+                        </Box>
+                    }
+                    {user?.email ?
+                        <Button onClick={logOut} color="inherit">Logout</Button> :
+                        <NavLink to="/login" className="link">Login</NavLink>
+                    }
+
+
                 </Toolbar>
             </AppBar>
         </Box>
