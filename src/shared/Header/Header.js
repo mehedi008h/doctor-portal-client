@@ -38,7 +38,10 @@ const Header = () => {
                     }
                     {user?.email ?
                         <Button onClick={logOut} color="inherit">Logout</Button> :
-                        <NavLink to="/login" className="link">Login</NavLink>
+                        <Box>
+                            <NavLink to="/login" className="link me-2">Login</NavLink>
+                            <NavLink to="/signup" className="link">Signup</NavLink>
+                        </Box>
                     }
 
 
