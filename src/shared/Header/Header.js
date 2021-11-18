@@ -32,6 +32,7 @@ const Header = () => {
                     {user?.email &&
                         <Box>
                             <NavLink to="/appointment" className="link">Appointment</NavLink>
+                            <NavLink to="/dashboard" className="link">Dashboard</NavLink>
                             <img className="user-img me-2" src={user?.photoURL} alt="" />
                             <NavLink to="/login" className="link">{user?.displayName}</NavLink>
                         </Box>

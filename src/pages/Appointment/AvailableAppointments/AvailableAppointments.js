@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import React, { useState } from 'react';
 import Booking from '../Booking/Booking';
+import './AvailableAppoienment.css';
 
 const AvailableAppointments = ({ date }) => {
     const bookings = [
@@ -44,21 +45,23 @@ const AvailableAppointments = ({ date }) => {
 
     const [bookingSuccess, setBookingSuccess] = useState(false);
     return (
-        <div className="container mt-3 mb-5">
-            <Typography sx={{ color: 'info.main', mb: 3, textAlign: 'center' }} variant="h4">Available Appointments on {date.toDateString()}</Typography>
-            <div className="row g-3">
-                {
-                    bookings.map(booking => <div className="col-md-4">
-                        <Booking
-                            key={booking.id}
-                            booking={booking}
-                            date={date}
-                            setBookingSuccess={setBookingSuccess}
-                        >
-                        </Booking>
-                    </div>)
-                }
+        <div className="available-appoienment d-flex">
+            <div className="container mt-5 mb-5">
+                <Typography sx={{ color: 'info.main', mb: 3, textAlign: 'center' }} variant="h4">Available Appointments on {date.toDateString()}</Typography>
+                <div className="row g-3">
+                    {
+                        bookings.map(booking => <div className="col-md-4">
+                            <Booking
+                                key={booking.id}
+                                booking={booking}
+                                date={date}
+                                setBookingSuccess={setBookingSuccess}
+                            >
+                            </Booking>
+                        </div>)
+                    }
 
+                </div>
             </div>
         </div>
     );

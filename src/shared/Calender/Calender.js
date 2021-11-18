@@ -6,16 +6,18 @@ import StaticDatePicker from '@mui/lab/StaticDatePicker';
 
 const Calender = ({ date, setDate }) => {
     return (
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <StaticDatePicker
-                displayStaticWrapperAs="desktop"
-                value={date}
-                onChange={(newValue) => {
-                    setDate(newValue);
-                }}
-                renderInput={(params) => <TextField {...params} />}
-            />
-        </LocalizationProvider>
+        <div>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <StaticDatePicker
+                    displayStaticWrapperAs="desktop"
+                    value={date}
+                    onChange={(newValue) => {
+                        setDate(newValue);
+                    }}
+                    renderInput={(params) => <TextField {...params} />}
+                />
+            </LocalizationProvider>
+        </div>
     );
 };
 

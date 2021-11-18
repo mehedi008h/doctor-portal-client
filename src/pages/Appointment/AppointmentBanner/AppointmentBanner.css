@@ -1,6 +1,5 @@
 .appointment-baneer {
-    background-image: url(../../../images/bg.png);
-    height: 400px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background-color: rgb(0, 30, 60); */
+    background-color: white;
+    height: 420px;
 }

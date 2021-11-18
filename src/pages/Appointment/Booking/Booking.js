@@ -13,7 +13,7 @@ const Booking = ({ booking, date, setBookingSuccess }) => {
                 <h4>{name}</h4>
                 <h5>{time}</h5>
                 <p>{space}</p>
-                <button onClick={handleBookingOpen} className="btn btn-info">Booking</button>
+                <button onClick={handleBookingOpen} className="booking-btn">Booking Appoienment</button>
             </div>
             <BookingModal
                 date={date}

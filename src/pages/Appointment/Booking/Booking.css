@@ -1,7 +1,26 @@
 .item {
     font-family: 'Poppins', sans-serif;
-    padding: 10px;
-    background-color: greenyellow;
+    padding: 25px 10px;
     text-align: center;
     border-radius: 15px;
+    box-shadow: none;
+    border-style: solid;
+    border-color: rgb(17, 106, 201);
+    border-width: 0px 0px thin;
+    background: rgb(10, 25, 41);
+    color: rgb(170, 180, 190);
+    transition: transform 0.3s;
+}
+.booking-btn{
+    border: none;
+    border-radius: 15px;
+    padding: 5px 15px;
+    background-color: yellowgreen;
+    color: black;
+    text-transform: uppercase;
+}
+.item:hover {
+    transform: translateY(-6px);
+    /* background-color: rgb(170, 159, 236);
+    color: black; */
 }

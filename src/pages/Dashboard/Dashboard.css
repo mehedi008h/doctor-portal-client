@@ -1,0 +1,30 @@
+.drawer {
+    background-color: rgb(0, 30, 60);
+    color: rgb(170, 180, 190);
+}
+.profile img{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid hotpink;
+}
+.sidebar-link {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+    padding-right: 10px;
+}
+.link-item {
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    color: rgb(170, 180, 190);
+    font-size: 17px;
+}
+.link-item:hover {
+    background-image: linear-gradient(to right top, #f03992, #ef328e, #ee2a8b, #ec2087, #eb1283);
+    color: white;
+    border-radius: 5px;
+}
