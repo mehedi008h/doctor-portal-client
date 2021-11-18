@@ -7,10 +7,9 @@ const DashboardHome = () => {
         <div>
             <div className="row">
                 <div className="col-md-6">
-                    <Calender></Calender>
+                    <h3>Home</h3>
                 </div>
                 <div className="col-md-6">
-                    <Appoienments></Appoienments>
                 </div>
             </div>
         </div>

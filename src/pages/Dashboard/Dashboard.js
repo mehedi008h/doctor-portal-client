@@ -27,6 +27,7 @@ import DashboardHome from './DashboardHome/DashboardHome';
 import './Dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import Appoienments from './Admin/Appoienment/Appoienments';
 
 const drawerWidth = 240;
 
@@ -34,7 +35,7 @@ const Dashboard = (props) => {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     let { path, url } = useRouteMatch();
-    const { admin, user } = useAuth();
+    const { admin, user, logOut } = useAuth();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -50,7 +51,8 @@ const Dashboard = (props) => {
             </div>
             <Divider />
             <div className="sidebar-link">
-                <Link to="/appointment" className="link-item"><FontAwesomeIcon icon={faGoogle} className="me-4"></FontAwesomeIcon>Appointment</Link>
+                <Link to={`${url}/appoienments`} className="link-item"><FontAwesomeIcon icon={faGoogle} className="me-4"></FontAwesomeIcon>Appointments</Link>
+                <button onClick={logOut} className="btn-logout"><FontAwesomeIcon icon={faGoogle} className="me-4"></FontAwesomeIcon>Logout</button>
             </div>
             <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -142,6 +144,9 @@ const Dashboard = (props) => {
                 <Switch>
                     <Route exact path={path}>
                         <DashboardHome></DashboardHome>
+                    </Route>
+                    <Route path={`${path}/appoienments`}>
+                        <Appoienments></Appoienments>
                     </Route>
                 </Switch>
 

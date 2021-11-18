@@ -19,6 +19,9 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
             <PrivateRouter path="/appointment">
               <Appointment></Appointment>
             </PrivateRouter>

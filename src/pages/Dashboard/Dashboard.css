@@ -23,7 +23,21 @@
     color: rgb(170, 180, 190);
     font-size: 17px;
 }
+.btn-logout {
+    padding: 10px;
+    background-color: rgb(0, 30, 60);
+    color: rgb(170, 180, 190);
+    border: none;
+    text-align: start;
+    margin-left: 10px;
+    font-size: 17px;  
+}
 .link-item:hover {
+    background-image: linear-gradient(to right top, #f03992, #ef328e, #ee2a8b, #ec2087, #eb1283);
+    color: white;
+    border-radius: 5px;
+}
+.btn-logout:hover {
     background-image: linear-gradient(to right top, #f03992, #ef328e, #ee2a8b, #ec2087, #eb1283);
     color: white;
     border-radius: 5px;
