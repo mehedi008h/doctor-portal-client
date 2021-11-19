@@ -28,6 +28,8 @@ import './Dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import Appoienments from './Admin/Appoienment/Appoienments';
+import Profile from './Profile/Profile';
+import EditProfile from './Profile/EditProfile';
 
 const drawerWidth = 240;
 
@@ -52,6 +54,7 @@ const Dashboard = (props) => {
             <Divider />
             <div className="sidebar-link">
                 <Link to={`${url}/appoienments`} className="link-item"><FontAwesomeIcon icon={faGoogle} className="me-4"></FontAwesomeIcon>Appointments</Link>
+                <Link to={`${url}/profile/${user.email}`} className="link-item"><FontAwesomeIcon icon={faGoogle} className="me-4"></FontAwesomeIcon>My Profile</Link>
                 <button onClick={logOut} className="btn-logout"><FontAwesomeIcon icon={faGoogle} className="me-4"></FontAwesomeIcon>Logout</button>
             </div>
             <List>
@@ -147,6 +150,12 @@ const Dashboard = (props) => {
                     </Route>
                     <Route path={`${path}/appoienments`}>
                         <Appoienments></Appoienments>
+                    </Route>
+                    <Route path={`${path}/profile/:email`}>
+                        <Profile></Profile>
+                    </Route>
+                    <Route path={`${path}/edit-profile/:id`}>
+                        <EditProfile></EditProfile>
                     </Route>
                 </Switch>
 
