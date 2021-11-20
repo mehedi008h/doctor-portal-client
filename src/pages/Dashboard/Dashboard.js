@@ -46,7 +46,7 @@ const Dashboard = (props) => {
     const drawer = (
         <div className="drawer">
             <div className="mt-5 mb-4">
-                <div className="text-center profile">
+                <div className="text-center profile-img">
                     <img src={user.photoURL} alt="" />
                 </div>
                 <h4 className="text-center mt-3 text-white">{user.displayName}</h4>

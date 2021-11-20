@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import './Profile.css';
 import useUser from '../../../hooks/useUser';
+import swal from 'sweetalert';
 
 const EditProfile = () => {
     const { id } = useParams();
@@ -30,6 +31,28 @@ const EditProfile = () => {
         setPatientInfo(newInfo);
     }
 
+    const handleUpdateUser = e => {
+        const user = {
+            ...patientInfo,
+            bod: date,
+            gender: gender
+        }
+        fetch('http://localhost:5000/users', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    swal("Good job!", "Update Profile Successfully!", "success");
+                }
+            })
+        e.preventDefault()
+    }
+
     const genders = [
         {
             value: 'Male',
@@ -45,7 +68,7 @@ const EditProfile = () => {
             <div className="row">
                 <div className="col-md-6 col-md-offset-6 mx-auto">
                     <div className="edit-profile">
-                        <form className="mt-4 d-flex flex-column">
+                        <form onSubmit={handleUpdateUser} className="mt-4 d-flex flex-column">
                             <TextField
                                 onBlur={handleOnBlur}
                                 name="displayName"
